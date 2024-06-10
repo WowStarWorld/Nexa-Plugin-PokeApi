@@ -1,5 +1,7 @@
 @file:Suppress("VulnerableLibrariesLocal")
 
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
     kotlin("jvm") version "2.0.0"
     id("com.github.johnrengelman.shadow") version "8.1.1"
@@ -17,17 +19,12 @@ repositories {
 }
 
 dependencies {
-    testImplementation(kotlin("test"))
 
     compileOnly("com.github.PixelVoyagers.Nexa:nexa-core:b9aca04449")
     compileOnly("com.squareup.retrofit2:retrofit:2.11.0")
 
     api("com.triceracode:poke-api:1.0.0")
 
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
 
 kotlin {
@@ -47,5 +44,12 @@ tasks.withType<ProcessResources> {
     )
     filesMatching(resourceTargets) {
         expand(replaceProperties)
+    }
+}
+
+tasks {
+    named<ShadowJar>("shadowJar") {
+        exclude("kotlin/**", "org/intellij/**", "org/jetbrains/**")
+        exclude("META-INF/kotlin-stdlib**.kotlin_module")
     }
 }
