@@ -1,0 +1,2 @@
+name: pokeapi
+version: ${gradle.project.getVersion()}

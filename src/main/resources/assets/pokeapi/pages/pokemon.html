@@ -1,0 +1,105 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Pokemon</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css" rel="stylesheet"/>
+</head>
+
+<!--/*@thymesVar id="pokemonName" type="java.lang.String"*/-->
+<!--/*@thymesVar id="pokemonType" type="java.lang.String"*/-->
+<!--/*@thymesVar id="pokemon" type="com.triceracode.pokeapi.model.resource.pokemon.Pokemon"*/-->
+<!--/*@thymesVar id="frontUrl" type="java.lang.String"*/-->
+<!--/*@thymesVar id="backUrl" type="java.lang.String"*/-->
+<!--/*@thymesVar id="pokemonStats" type="java.util.Map<java.lang.String, java.lang.Integer>"*/-->
+<body class="font-sans leading-normal tracking-normal flex items-center justify-center h-screen" style="background: #313338;">
+<script>
+    window.nexa = {
+        screenshot: {
+            selector: "#card"
+        }
+    };
+</script>
+<div id="card" style="padding: 1rem; background: #313338;">
+    <div class="shadow-lg rounded-lg p-4 max-w-max w-full border" style="border-color: #60d1f6; background: rgba(43, 44, 45, 85%);">
+        <div class="flex justify-between items-center mb-2">
+            <div class="flex items-center space-x-2">
+                <i class="iconoir-pokeball text-white text-2xl" style="transform: rotate(-15deg);"></i>
+                <span class="font-bold text-sm text-white">Pokémon</span>
+            </div>
+            <span class="text-sm font-bold text-white" th:text="${pokemonType}"/>
+        </div>
+        <div class="text-xs text-gray-600 mb-2"></div>
+        <div class="flex items-center mb-4 justify-between">
+            <div class="font-bold text-2xl text-white" th:text="${pokemonName}"/>
+            <img alt="Pokemon Front" class="w-16 h-16"
+                 onerror="src = 'https://via.placeholder.com/60';"
+                 th:src="${frontUrl}">
+        </div>
+        <div class="flex justify-between items-center mb-2 text-white">
+            <div>
+                <div class="text-base">
+                    <i class="iconoir-database text-base"></i>
+                    Weight
+                </div>
+                <div class="text-base font-bold" th:text="${pokemon.weight}"/>
+            </div>
+            <div style="width: 1rem;"></div>
+            <div>
+                <div class="text-base">
+                    <i class="iconoir-ruler-combine text-base"></i>
+                    Height
+                </div>
+                <div class="text-base font-bold" th:text="${pokemon.height}"/>
+            </div>
+            <img alt="Pokemon Back" class="w-16 h-16"
+                 onerror="src = 'https://via.placeholder.com/60';"
+                 th:src="${backUrl}">
+        </div>
+        <div class="flex justify-between items-center mb-2 text-white">
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Hp
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['hp']}"/>
+            </div>
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Attack
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['attack']}"/>
+            </div>
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Defense
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['defense']}"/>
+            </div>
+        </div>
+        <div class="flex justify-between items-center mb-2 text-white">
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Special Attack
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['special-attack']}"/>
+            </div>
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Special Defense
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['special-defense']}"/>
+            </div>
+            <div class="px-2 py-2">
+                <div class="text-base">
+                    Speed
+                </div>
+                <div class="text-base font-bold" th:text="${pokemonStats['speed']}"/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
