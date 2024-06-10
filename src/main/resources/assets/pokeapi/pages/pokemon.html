@@ -34,7 +34,7 @@
         <div class="text-xs text-gray-600 mb-2"></div>
         <div class="flex items-center mb-4 justify-between">
             <div class="font-bold text-2xl text-white" th:text="${pokemonName}"/>
-            <img alt="Pokemon Front" class="w-16 h-16"
+            <img alt="Pokemon Front" class="w-32 h-32"
                  onerror="src = 'https://via.placeholder.com/60';"
                  th:src="${frontUrl}">
         </div>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="text-base font-bold" th:text="${pokemon.height}"/>
             </div>
-            <img alt="Pokemon Back" class="w-16 h-16"
+            <img alt="Pokemon Back" class="w-32 h-32"
                  onerror="src = 'https://via.placeholder.com/60';"
                  th:src="${backUrl}">
         </div>
