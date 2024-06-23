@@ -20,7 +20,7 @@ repositories {
 
 dependencies {
 
-    compileOnly("com.github.PixelVoyagers.Nexa:nexa-core:b9aca04449")
+    compileOnly("com.github.PixelVoyagers.Nexa:nexa-core:baaf60fc12")
     compileOnly("com.squareup.retrofit2:retrofit:2.11.0")
 
     api("com.triceracode:poke-api:1.0.0")

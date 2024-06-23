@@ -5,10 +5,10 @@ import pixel.auxframework.component.annotation.Component
 import pixel.auxframework.core.registry.identifierOf
 import pixel.nexa.core.resource.AssetsMap
 import pixel.nexa.network.command.Command
+import pixel.nexa.network.command.CommandSession
 import pixel.nexa.network.command.NexaCommand
 import pixel.nexa.network.message.MessageFragments
 import pixel.nexa.network.message.MutableMessageData
-import pixel.nexa.network.session.CommandSession
 
 @Command("pokeapi:pokemon")
 @Component
